@@ -6,12 +6,12 @@ import java.util.Scanner;
  * Dice-Tower
  */
 
-/* A. Dice Tower (1) */
-
+ /* A. Dice Tower (1) */
+ 
 public class DiceTower {
 
     public static void main(String[] args) {
-
+        
         Scanner scan = new Scanner(System.in);
 
         int numberOfDice, topOfTower, leftInterface, rightInterface;
