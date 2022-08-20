@@ -1,7 +1,7 @@
 
 // Java program to find first and
 // last digits of a number
-import java.math.*;
+
 import java.util.*;
 
 class firstAndLastDigit {
@@ -26,10 +26,11 @@ class firstAndLastDigit {
 
     // Driver program
     public static void main(String args[]) {
-        Scanner scanner = new Scanner(System.in);
-        int n = scanner.nextInt();
-        System.out.println(firstDigit(n) +
-                " " + lastDigit(n));
+        try (Scanner scanner = new Scanner(System.in)) {
+            int n = scanner.nextInt();
+            System.out.println(firstDigit(n) +
+                    " " + lastDigit(n));
+        }
     }
 }
 
