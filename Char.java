@@ -11,14 +11,14 @@ output standard output
 //Note : difference between 'a' and 'A' in ASCII is 32 .
 public class Char {
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
+        try (Scanner scan = new Scanner(System.in)) {
+            char x = scan.next().charAt(0);
 
-        char x = scan.next().charAt(0);
-
-        if (x > 64 && x < 91) {
-            System.out.println((char) (x + 32));
-        } else {
-            System.out.println((char) (x - 32));
+            if (x > 64 && x < 91) {
+                System.out.println((char) (x + 32));
+            } else {
+                System.out.println((char) (x - 32));
+            }
         }
 
     }

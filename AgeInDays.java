@@ -16,14 +16,14 @@ import java.util.Scanner;
 public class AgeInDays {
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        try (Scanner scanner = new Scanner(System.in)) {
+            int days = scanner.nextInt();
 
-        int days = scanner.nextInt();
-
-        System.out.println(days / 365 + " years");
-        days %= 365;
-        System.out.println(days / 30 + " months");
-        days %= 30;
-        System.out.println(days + " days");
+            System.out.println(days / 365 + " years");
+            days %= 365;
+            System.out.println(days / 30 + " months");
+            days %= 30;
+            System.out.println(days + " days");
+        }
     }
 }

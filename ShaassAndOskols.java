@@ -17,7 +17,8 @@ public class ShaassAndOskols {
 
     public static void main(String[] args) {
 
-        Scanner scan = new Scanner(System.in);
+        try (Scanner scan = new Scanner(System.in)) {
+        }
 
         System.out.println(Math.round(2.1784 /0.01)*0.01);
 

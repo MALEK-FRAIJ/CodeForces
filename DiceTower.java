@@ -12,29 +12,29 @@ public class DiceTower {
 
     public static void main(String[] args) {
         
-        Scanner scan = new Scanner(System.in);
+        try (Scanner scan = new Scanner(System.in)) {
+            int numberOfDice, topOfTower, leftInterface, rightInterface;
 
-        int numberOfDice, topOfTower, leftInterface, rightInterface;
+            numberOfDice = scan.nextInt();
+            topOfTower = scan.nextInt();
+            int count = 1;
 
-        numberOfDice = scan.nextInt();
-        topOfTower = scan.nextInt();
-        int count = 1;
+            for (int i = 0; i < numberOfDice; i++) {
 
-        for (int i = 0; i < numberOfDice; i++) {
+                leftInterface = scan.nextInt();
+                rightInterface = scan.nextInt();
 
-            leftInterface = scan.nextInt();
-            rightInterface = scan.nextInt();
+                if (topOfTower == rightInterface || topOfTower == leftInterface ||
+                        topOfTower == 7 - rightInterface || topOfTower == 7 - leftInterface) {
 
-            if (topOfTower == rightInterface || topOfTower == leftInterface ||
-                    topOfTower == 7 - rightInterface || topOfTower == 7 - leftInterface) {
+                    count = 0;
 
-                count = 0;
-
+                }
+                topOfTower = 7 - topOfTower;
             }
-            topOfTower = 7 - topOfTower;
-        }
 
-        System.out.println((count == 1 ? "YES" : "NO"));
+            System.out.println((count == 1 ? "YES" : "NO"));
+        }
 
     }
 }

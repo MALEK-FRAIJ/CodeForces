@@ -11,18 +11,18 @@ import java.util.Scanner;
 
 public class FirstDigit {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        try (Scanner scanner = new Scanner(System.in)) {
+            int number = scanner.nextInt(); // number X (999 < X  ≤  9999)
 
-        int number = scanner.nextInt(); // number X (999 < X  ≤  9999)
-
-        while (number >= 10) 
-            number /= 10;
-       
-        //If the first digit is even print "EVEN" otherwise print "ODD".
-        if (number % 2 == 0)
-            System.out.println("EVEN");
-        else
-            System.out.println("ODD");
+            while (number >= 10) 
+                number /= 10;
+      
+            //If the first digit is even print "EVEN" otherwise print "ODD".
+            if (number % 2 == 0)
+                System.out.println("EVEN");
+            else
+                System.out.println("ODD");
+        }
 
     }
 }
